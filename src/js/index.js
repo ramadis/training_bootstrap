@@ -1,5 +1,5 @@
 (function () {
 
-  console.log('WOLOX');
+  $("nav ul li a").click(function(){console.log("ok")});
 
 })();

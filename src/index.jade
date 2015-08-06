@@ -1,13 +1,39 @@
 doctype html
 html(lang='en')
   head
-    title title here
+    title Training web technologies
     meta(charset="UTF-8")
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(href='/css/all.css', rel='stylesheet')
     link(href='/css/vendor.css', rel='stylesheet')
   body
-    .center
-      h1 Frontend Bootstrap!
-    // inject:js
-    // endinject
+    header
+      .row 
+        nav.col-md-3
+          ul
+            li: a(href="#") HOME
+            li: a(href="#") ABOUT
+            li: a(href="#") PORTFOLIO
+            li: a(href="#") BLOG
+            li: a(href="#") CONTACT
+        .logo.col-md-7
+          h1 PAGINA WEB
+          h2 DE PRUEBA
+        .sociales.col-md-2
+          ul
+            li: p f
+            li: p t
+            li: p p
+
+    #Slideshow
+        img.img-responsive(src="/assets/slide1.jpg")
+
+    #Copyright
+      .row
+        .copy.col-md-3
+          p Copyright © 2014 Andy Parker
+        .col-md-7
+        .col-md-2
+
+     inject:js
+     endinject
