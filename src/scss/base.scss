@@ -41,8 +41,11 @@ header {
     padding: 35px 0 20px 0;
     font-size:10px;
     top: 0;
-    width:300px !important;
-
+    
+    &.col-sm-3 ul li{
+      padding: 10px 10% 0px 0;
+    }
+    
   }
 
   /*
@@ -51,14 +54,6 @@ header {
 
   .logo{
     letter-spacing:8px;
-    @media screen and (max-width: 1200px){
-      width: 50%;
-    }
-
-    @media screen and (max-width: 1000px){
-      width: 20%;
-    }
-
     h1{
       font-weight:800;
       font-size:20px;
@@ -75,7 +70,6 @@ header {
   **SOCIALES
   */
   .sociales {
-    width: 200px !important;
     margin-top:50px;
   }
 
