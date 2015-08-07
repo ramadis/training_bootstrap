@@ -1,9 +1,13 @@
 @import 'variables/colors';
 
 body {
-  background-color: $background !important;
+  background-color: $background;
+  background-image: url("../assets/slide1.jpg");
+  background-position:100% 0 !important;
   text-align: center;
+  background-size:120%;
   height: 100%;
+  transition: background-image 0.5s ease;
 }
 
 
@@ -15,6 +19,7 @@ li {
 header {
   z-index: 100;
   overflow: hidden;
+  background-color:$background;
   /*
   **NAVIGATION
   */
@@ -116,15 +121,7 @@ header {
   height: 800px;
   width: 100%;
   overflow: hidden;
-  background-image: url("../assets/slide1.jpg");
-  background-position:center;
-  transition: background-image 0.5s ease;
-
-  img {
-    width: inherit;
-    display:none;
-    max-width: 100%;
-    }
+  background-color:rgba(0,0,0,0);
 }
 
 
@@ -139,6 +136,21 @@ header {
   bottom:0;
   background-color:$background;
   width:100%;
+
+  button{
+    height:30px;
+    width:30px;
+    outline:none;
+    background-color: $transparent;
+    border: 1px solid brown;
+    border-radius:100%;
+
+    &:hover{
+      border-color:brown;
+      background-color:gray;
+    }
+
+  }
 }
 
 #Copyright .row{ 
@@ -186,7 +198,7 @@ header {
   display:none;
   position:absolute;
   top:0;
-  left:150px;
+  left:120px;
   min-width:100px;
   width:auto;
   height:158px;

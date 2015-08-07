@@ -54,8 +54,6 @@ html(lang='en')
             li &#xe112;
             li: span.glyphicon.glyphicon-magnet
             li: span.glyphicon.glyphicon-magnet
-    #Slideshow
-        img.img-responsive(src="/assets/slide1.jpg")
 
     #Copyright
       .row
@@ -65,11 +63,11 @@ html(lang='en')
         .controles.col-md-4
           ul
             li: button(onClick="anterior()")
-              | Anterior
+              | <
             li: button(onClick="siguiente()")
-              | Siguiente
+              | >
             li: button.play
-              | Pausa
+              | ||
     script(src="js/jquery.min.js")
     script(src="js/index.js")
 
