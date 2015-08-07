@@ -22,7 +22,7 @@ html(lang='en')
 
     header.container-fluid
       .row
-        nav.navbar.col-lg-2.col-md-4.col-xs-4
+        nav.navbar.col-lg-3.col-md-4.col-xs-4
           section#submenu
             ul
               li: a(href="#") 
@@ -46,21 +46,21 @@ html(lang='en')
           button
             | Toggle
 
-        .logo.col-lg-8.col-md-6.col-xs-5
+        .logo.col-lg-6.col-md-6.col-xs-5
           h1 PAGINA WEB
           h2 DE PRUEBA
-        .sociales.col-lg-2.col-md-2.col-xs-3
+        .sociales.col-lg-3.col-md-2.col-xs-3
           ul
-            li &#xe112;
-            li: span.glyphicon.glyphicon-magnet
-            li: span.glyphicon.glyphicon-magnet
-
+            li F
+            li T
+            li B
+    .backcontrols
     #Copyright
       .row
-        .copy.col-md-3
+        .copy.col-md-3.col-xs-5
           p Copyright © 2014 Andy Parker
-        .col-md-5
-        .controles.col-md-4
+        .col-md-5.col-xs-2
+        .controles.col-md-4.col-xs-5
           ul
             li: button(onClick="anterior()")
               | <
@@ -68,6 +68,8 @@ html(lang='en')
               | >
             li: button.play
               | ||
+            li: button(onClick="fullscreen()")
+              | ↑
     script(src="js/jquery.min.js")
     script(src="js/index.js")
 

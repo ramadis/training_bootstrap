@@ -6,6 +6,7 @@ body {
   background-position:100% 0 !important;
   text-align: center;
   background-size:120%;
+  background-repeat:no-repeat;
   height: 100%;
   transition: background-image 0.5s ease;
 }
@@ -101,8 +102,21 @@ header {
   **SOCIALES
   */
   .sociales {
+
+    ul li{
+      font-weight:800;
+      font-size:16px;
+      cursor:pointer;
+      &:hover{
+        color: $logo-hover;
+      }  
+    }
+
     @media screen and (max-width: "800px") {
       margin-top:35px;
+    }
+    @media screen and (max-width: "450px") {
+      display:none;
     }
     margin-top: 70px;
     li {
@@ -146,11 +160,19 @@ header {
     border-radius:100%;
 
     &:hover{
-      border-color:brown;
-      background-color:gray;
+      border-color:gray;
+      color:$background;
+      background-color:$button-selected;
     }
 
   }
+}
+
+.backcontrols{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:60px;
 }
 
 #Copyright .row{ 
@@ -175,6 +197,10 @@ header {
   height:0;
   overflow:hidden;
   background-color:rgba(253,253,249,.7);
+  
+  @media screen and (min-width: "800px") {
+    display: none!important;
+  }
 
   ul{
     margin-top:-150px;

@@ -3,6 +3,13 @@ var slide = 1;
 
 
 //Manejo del slideshow
+$(".backcontrols").hover(function(){
+	if ($("#Copyright").css("bottom") =="-200px"){
+		openBars(1000);
+	}
+},function(){});
+
+
 function pasar(slide){
 	$("body").css("background-image", "url('../assets/slide" + slide + ".jpg')");
 }
@@ -15,6 +22,16 @@ function slider(){
 		slide++;
 		pasar(slide);
 	},3000);
+}
+
+function fullscreen(){
+	$("#Copyright").animate({
+		bottom: "-=200"
+	},1000,function(){});
+
+	$("header").animate({
+		marginTop: "-=400"
+	},1000,function(){});
 }
 
 function siguiente(){
@@ -92,18 +109,22 @@ $("#submenu").hover(function(){},function(){
 	$("#submenu").css("display","none");
 });
 
+function openBars(time){
+	$("#Copyright").animate({
+		bottom: "+=200"
+	},time,function(){});
+
+	$("header").animate({
+		marginTop: "+=400"
+	},time,function(){});
+}
+
 function startUp(){
 	slider();
 	$("#Copyright").css("bottom","-200px");
 	$("header").css("margin-top","-400px");
 
-	$("#Copyright").animate({
-		bottom: "+=200"
-	},2000,function(){});
-
-	$("header").animate({
-		marginTop: "+=400"
-	},2000,function(){});
+	openBars(2000);
 
 }
 
