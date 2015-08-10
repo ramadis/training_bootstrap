@@ -1,8 +1,10 @@
 //IMPORTS
+
 @import 'variables/colors';
 @import 'external/bootstrap_override';
 
 //MIXINS
+
 @mixin stopDisplay($max-width) {
   @media screen and (max-width: $max-width) {
     display: none;
@@ -34,7 +36,7 @@ header {
   }
 
   li {
-    padding: 10px 27% 0 0;
+    padding: 10px 10px 0 0;
   }
 
   a {
@@ -69,12 +71,8 @@ header {
       }
     }
 
-    > ul {
-      @include stopDisplay('800px');
-    }
-
     &.col-sm-3 ul li {
-      padding: 10px 10% 0 0;
+      padding: 10px 100px 0 0;
     }
   }
 
@@ -84,10 +82,6 @@ header {
     letter-spacing: 8px;
     margin-top: 40px;
     transition: color 0.3s ease;
-
-    @media screen and (max-width: '800px') {
-      margin-top: 0;
-    }
 
     h1 {
       font-weight: 800;
@@ -107,14 +101,8 @@ header {
   }
 
   //SOCIALES
+
   .sociales {
-
-    @media screen and (max-width: '800px') {
-      margin-top: 35px;
-    }
-
-    @include stopDisplay('480px');
-
     margin-top: 70px;
 
     ul li {
@@ -135,6 +123,7 @@ header {
 }
 
 //COPYRIGHT
+
 .copyright {
   position: fixed;
   height: 50px;
@@ -158,8 +147,6 @@ header {
   }
 
   .controles {
-    @include stopDisplay('480px');
-
     margin-top: 10px;
 
     li {
@@ -174,6 +161,7 @@ header {
 }
 
 //BRING CONTROLS BACK ON FULLSCREEN MODE
+
 .backcontrols {
   position: absolute;
   bottom: 0;
@@ -193,11 +181,7 @@ header {
   width: 100%;
   height: 0;
   overflow: hidden;
-  background-color: rgba(253, 253, 249, 0.7);
-
-  @media screen and (min-width: '800px') {
-    display: none;
-  }
+  background-color: $toggle-menu-background;
 
   ul {
     margin-top: -150px;
@@ -216,6 +200,7 @@ header {
 }
 
 //MENU HOVER
+
 .submenu {
   display: none;
   position: absolute;
@@ -232,10 +217,39 @@ header {
 }
 
 //FOTOS EN MIN-WIDTH
+
 .fotos {
   width: 100%;
 
   img {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: '800px') {
+  header .menu {
+    display: none;
+  }
+
+  header .sociales {
+    margin-top: 35px;
+  }
+
+  header .logo {
+    margin-top: 0;
+  }
+
+  nav > ul {
+    display: none;
+  }
+}
+
+@media screen and (max-width: '480px') {
+  .copyright .controles {
+    display: none;
+  }
+
+  header .sociales {
+    display: none;
   }
 }

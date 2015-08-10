@@ -1,108 +1,114 @@
 /*global $ */
 'use strict';
 
-//Manejo de animaciones cuando abre el sitio
-function openBars(time){
+//ANIMATIONS TO CSS
+//SPIRTES
+//CSS BY CLASSES
+
+//Opening animations
+function openBars(time) {
 	$('.copyright').animate({
 		bottom: '+=200'
-	},time,function(){});
+	}, time, function(){});
 
 	$('header').animate({
 		marginTop: '+=400'
-	},time,function(){});
+	}, time, function(){});
 }
 
+//Slideshow
 var slide = 1;
 
-//Manejo del slideshow
-$('.backcontrols').hover(function(){
-	if ($('.copyright').css('bottom') ==='-200px'){
+$('.backcontrols').hover(function() {
+	if ($('.copyright').css('bottom') ==='-200px') {
 		openBars(1000);
 	}
-},function(){});
+});
 
-
-function pasar(slide){
+function changeSlide(slide) {
 	$('body').css('background-image', 'url("../assets/slide' + slide + '.jpg")');
 }
 
-
-var paso;
-function slider(){
-	paso = setInterval(function(){
-		if(slide>=4) slide=0;
+var carrousel;
+function slider() {
+	carrousel = setInterval(function(){
+		if (slide >= 4) {
+			slide=0;
+		}
 		slide++;
-		pasar(slide);
+		changeSlide(slide);
 	},3000);
 }
 
-function fullscreen(){
+function fullscreen() {
 	$('.copyright').animate({
 		bottom: '-=200'
-	},1000,function(){});
+	}, 1000, function(){});
 
 	$('header').animate({
 		marginTop: '-=400'
-	},1000,function(){});
+	}, 1000, function(){});
 }
 
-function siguiente(){
-	window.clearInterval(paso);
+function next() {
+	window.clearInterval(carrousel);
 	$('button.play').html('▻');
-	if(slide<4){
+	
+	if (slide < 4) {
 		slide++;
-		pasar(slide);
-	}else if(slide === 4){
-		pasar(slide=1); 
+		changeSlide(slide);
+	} else if (slide === 4) {
+		changeSlide(slide=1); 
 	}
 }
 
-function anterior(){
-	window.clearInterval(paso);
+function previous() {
+	window.clearInterval(carrousel);
 	$('button.play').html('▻');
-	if(slide>1){
+	
+	if (slide > 1) {
 		slide--;
-		pasar(slide);
-	} else if(slide <= 1){
+		changeSlide(slide);
+	} else if (slide <= 1) {
 		slide=4;
-		pasar(slide);
+		changeSlide(slide);
 	}
 }
 
-
-$('.play').click(function(){
-	if($(this).html() === '▻'){
+$('.play').click(function() {
+	if ($(this).html() === '▻') {
 		slider();
 		$('button.play').html('||');
-	}else{
+	} else {
 		$('button.play').html('▻');
-		window.clearInterval(paso);
+		window.clearInterval(carrousel);
 	}
 });
 
-$('.prev').click(function(){
-	anterior();
+$('.prev').click(function() {
+	previous();
 });
 
-$('.next').click(function(){
-	siguiente();
+$('.next').click(function() {
+	next();
 });
 
-$('.fullsc').click(function(){
+$('.fullsc').click(function() {
 	fullscreen();
 });
 
-//Manejo del toggle button
-$('nav button').click(function(){
-	if (!$('.menu').hasClass('display')){
+//Toggle button
+$('nav button').click(function() {
+	if (!$('.menu').hasClass('display')) {
 		$('.menu').addClass('display');
+
 		$('.menu').animate({
 			height: '+=200'
 		}, 1000, function() {
 		// Animation complete.
 		});	
 
-		setTimeout(function(){
+		setTimeout(function() {
 			$( '.menu ul' ).animate({
 				marginTop: '+=150'
 			}, 1000, function() {
@@ -110,16 +116,15 @@ $('nav button').click(function(){
 			});	
 		},500);
 
-	}else{
+	} else {
 		$('.menu').removeClass('display');
 		$('.menu').css('height','0');
 		$('.menu ul').css('margin-top','-150px');
 	}
 });
 
-
-//Manejo del menu hover
-$('nav > ul li').hover(function(){
+//Hover menu
+$('nav > ul li').hover(function() {
 	$('.submenu').css('display','none');
 },function(){});
 
@@ -131,37 +136,34 @@ $('.submenu').hover(function(){},function(){
 	$('.submenu').css('display','none');
 });
 
-
-//Manejo de animaciones cuando abre el sitio
-function startUp(){
+//Opening effects
+function startUp() {
 	slider();
 	$('.copyright').css('bottom','-200px');
 	$('header').css('margin-top','-400px');
-
 	openBars(2000);
-
 }
 
 $(document).ready(startUp());
 
-//Manejo de fotos con width chico.
-function cargarFotos(){
+//Small width behavior
+function loadPictures() {
 	var toAppend = '';
-	for(var i=1;i<5;i++){
+	
+	for (var i=1;i<5;i++) {
 		toAppend += '<img src="assets/slide'+i+'.jpg"></img>';
 	}
 	$('.fotos').append(toAppend);
 }
 
-function sacarFotos(){
+function removePictures() {
 	$('.fotos img').remove();
 }
 
-$(window).resize(function(){
+$(window).resize(function() {
 	if ($(window).width() < 480) {
-	   cargarFotos();
-	}
-	else {
-	   sacarFotos();
+	   loadPictures();
+	} else {
+	   removePictures();
 	}
 });
