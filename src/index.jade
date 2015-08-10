@@ -1,13 +1,15 @@
 doctype html
 html(lang='en')
+
   head
     title Training web technologies
     meta(charset="UTF-8")
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(href='/css/all.css', rel='stylesheet')
     link(href='/css/vendor.css', rel='stylesheet')
+
   body
-    section#menu
+    section.menu
       ul
         li: a(href="#") 
           | HOME
@@ -23,7 +25,7 @@ html(lang='en')
     header.container-fluid
       .row
         nav.navbar.col-lg-3.col-md-4.col-xs-4
-          section#submenu
+          section.submenu
             ul
               li: a(href="#") 
                 | HOME
@@ -54,26 +56,26 @@ html(lang='en')
             li F
             li T
             li B
-    #Fotos
+    .fotos
 
     .backcontrols
 
-    #Copyright
+    .copyright
       .row
         .copy.col-md-3.col-xs-5
           p Copyright © 2014 Andy Parker
         .col-md-5.col-xs-2
         .controles.col-md-4.col-xs-5
           ul
-            li: button(onClick="anterior()")
+            li: button.prev
               | <
-            li: button(onClick="siguiente()")
+            li: button.next
               | >
             li: button.play
               | ||
-            li: button(onClick="fullscreen()")
+            li: button.fullsc
               | ↑
-              
+
     script(src="js/jquery.min.js")
     script(src="js/index.js")
 

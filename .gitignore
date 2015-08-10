@@ -12,3 +12,6 @@ build
 
 # aws keys file
 gulp/aws.js
+
+#temporal
+*~
