@@ -1,3 +1,4 @@
 module.exports = [
-  "bootstrap/dist/js/bootstrap.js"
+  "bootstrap/dist/js/bootstrap.js",
+  "jquery/dist/jquery.js"
 ];
