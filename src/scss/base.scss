@@ -3,14 +3,6 @@
 @import 'variables/colors';
 @import 'external/bootstrap_override';
 
-//MIXINS
-
-@mixin stopDisplay($max-width) {
-  @media screen and (max-width: $max-width) {
-    display: none;
-  }
-}
-
 body {
   text-align: center;
   height: 100%;
@@ -28,6 +20,8 @@ li {
 header {
   overflow: hidden;
   background-color: $background;
+  margin-top: -400px;
+  transition: margin-top 1s;
 
   //NAVIGATION
 
@@ -127,27 +121,62 @@ header {
 .copyright {
   position: fixed;
   height: 50px;
-  bottom: 0;
+  bottom: -200px;
   background-color: $background;
   width: 100%;
 
   button {
-    height: 30px;
-    width: 30px;
+    height: 27px;
+    width: 27px;
     outline: none;
+    //background-color: $transparent;
+    //border: 1px solid $brown;
     background-color: $transparent;
-    border: 1px solid $brown;
-    border-radius: 100%;
+    border: 0;
+    background-image: url('../assets/sprite-controls.png');
+    background-position: 0 -50px;
+    //border-radius: 100%;
 
     &:hover {
-      border-color: $gray;
-      color: $background;
-      background-color: $button-selected;
+      background-position-y: 2px;
     }
   }
 
-  .controles {
+  .controls {
     margin-top: 10px;
+    position: relative;
+    transition: top 0.5s;
+    top: 0;
+
+    &.controls-show {
+      transition: top 2s;
+      top: -200px;
+
+      button {
+        background-position-y: 27px;
+
+        &:hover {
+          background-position-y: 78px;
+        }
+      }
+
+    }
+
+    .play {
+      background-position-x: 191px;
+
+      &.playing {
+        background-position-x: 131px;
+      }
+    }
+
+    .prev {
+      background-position-x: 95px;
+    }
+
+    .next {
+      background-position-x: 60px;
+    }
 
     li {
       display: inline-block;
@@ -171,21 +200,25 @@ header {
 
 //MENU
 
-.display {
-  display: block;
-}
-
 .menu {
   top: 92px;
   position: absolute;
   width: 100%;
   height: 0;
+  transition: height 1s;
   overflow: hidden;
   background-color: $toggle-menu-background;
 
   ul {
-    margin-top: -150px;
+
     padding: 35px 0 0 0;
+    transition: margin-top 1s;
+    margin-top: -150px;
+
+    &.items-menu-show {
+      transition: margin-top 2s;
+      margin-top: 0;
+    }
   }
 
   li a {
@@ -220,6 +253,7 @@ header {
 
 .fotos {
   width: 100%;
+  display: none;
 
   img {
     width: 100%;
@@ -245,11 +279,44 @@ header {
 }
 
 @media screen and (max-width: '480px') {
-  .copyright .controles {
+  .copyright .controls {
     display: none;
   }
 
   header .sociales {
     display: none;
   }
+}
+
+.bot-menu-show {
+  transition: bottom 1s;
+  bottom: 0;
+}
+
+.bot-menu-hide {
+  transition: bottom 1s;
+  bottom: -200px;
+}
+
+.top-menu-show {
+  transition: margin-top 1s;
+  margin-top: 0;
+}
+
+.top-menu-hide {
+  transition: margin-top 1s;
+  margin-top: -400px;
+}
+
+.toggle-menu-show {
+  transition: height 1s;
+  height: 200px;
+}
+
+.display {
+  display: block;
+}
+
+.not-display {
+  display: none;
 }
