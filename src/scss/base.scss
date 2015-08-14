@@ -19,6 +19,8 @@ header {
   overflow: hidden;
   background-color: $white;
   margin-top: -400px;
+  position: relative;
+  z-index: 300;
   transition: margin-top 1s;
 
   //NAVIGATION
@@ -118,6 +120,7 @@ header {
   height: 50px;
   bottom: -200px;
   background-color: $white;
+  z-index: 300;
   width: 100%;
 
   button {
@@ -317,4 +320,82 @@ header {
 
 .not-display {
   display: none;
+}
+
+
+/********ABOUT*******/
+
+.mainContent {
+  height: 100%;
+}
+
+.header-img {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.inverse {
+  color: $white;
+  background-color: transparent;
+
+  a {
+    color: $white;
+
+    &:hover {
+      color: $gray;
+    }
+  }
+
+  .submenu a{
+    color: $black;
+  }
+}
+
+article {
+  position: absolute;
+  z-index: 200;
+  width: 100%;
+  top: 300px;
+  padding: 70px 300px;
+  height:900px;
+  background-color: $dark-brown;
+
+  h1 {
+    font-size: 60px;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  p {
+    margin: 40px auto;
+    font-size: 23px;
+    line-height: 35px;
+    color: $gray;
+    width: 50%;
+    min-width: 400px;
+    max-width: 1000px;
+    text-align: left;
+  }
+}
+
+hr {
+  width: 100px;
+  height: 1px;
+  background-color: transparent !important;
+  border-top: 5px solid $black !important;
+}
+
+.about-copyright {
+  position: absolute;
+  top: 1200px;
+
+  >  * {
+    display: none;
+  }
+
+  .copy {
+    display: block;
+    width: 100%;
+  }
 }

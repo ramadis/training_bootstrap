@@ -66,6 +66,7 @@ function previous() {
 $('.play').click(function() {
   if ($(this).hasClass('playing')) {
     $(this).removeClass('playing');
+    console.log("ok")
     window.clearInterval(carrousel);
   } else {
     $(this).addClass('playing');
@@ -109,7 +110,7 @@ function startUp() {
   openBars();
 }
 
-$(document).ready(startUp());
+$(document).ready(startUp);
 
 //Small width behavior
 $(window).resize(function() {
@@ -129,4 +130,13 @@ $(window).resize(function() {
   } else {
     $('.menu').removeClass('not-display');
   }
+});
+
+/********************************************************/
+/**********************ABOUT PAGE ***********************/
+/********************************************************/
+
+$(".about").click(function() {
+  $(".mainContent > *").remove();
+  $(".mainContent").load("_about.html");
 });
