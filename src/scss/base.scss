@@ -1,18 +1,320 @@
+//IMPORTS
+
 @import 'variables/colors';
+@import 'external/bootstrap_override';
 
 body {
-  background-image: url('../assets/wolox_bg.png');
+  text-align: center;
+  height: 100%;
+  background: url('../assets/slide1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  transition: background-image 0.5s ease;
 }
 
-.center {
-  background-color: rgba(255, 255, 255, .9);
-  height: 100%;
-  left: 20%;
-  position: absolute;
-  text-align: center;
-  width: 60%;
+li {
+  list-style-type: none;
+}
 
-  h1 {
-    color: $wolox-green;
+header {
+  overflow: hidden;
+  background-color: $white;
+  margin-top: -400px;
+  transition: margin-top 1s;
+
+  //NAVIGATION
+
+  ul {
+    display: inline-block;
   }
+
+  li {
+    padding: 10px 10px 0 0;
+  }
+
+  a {
+    color: $black;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $light-brown;
+    }
+  }
+
+  nav {
+    position: relative;
+    padding: 35px 0 20px 0;
+    font-size: 10px;
+    top: 0;
+    text-align: left;
+
+    button {
+      background-color: transparent;
+      border: 0;
+      width: 15px;
+      outline: none;
+      padding: 0;
+      height: 15px;
+      background-image: url('../assets/menu.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      display: none;
+    }
+
+    &.col-sm-3 ul li {
+      padding: 10px 100px 0 0;
+    }
+  }
+
+  //LOGO
+
+  .logo {
+    letter-spacing: 8px;
+    margin-top: 40px;
+    transition: color 0.3s ease;
+
+    h1 {
+      font-weight: 800;
+      font-size: 20px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 8px;
+    }
+
+    &:hover,
+    .sociales > *:hover {
+      cursor: pointer;
+      color: $gray;
+    }
+  }
+
+  //SOCIALES
+
+  .sociales {
+    margin-top: 70px;
+
+    ul li {
+      font-weight: 800;
+      font-size: 16px;
+      cursor: pointer;
+
+      &:hover {
+        color: $gray;
+      }
+    }
+
+    li {
+      display: inline;
+      padding: 0 2px;
+    }
+  }
+}
+
+//COPYRIGHT
+
+.copyright {
+  position: fixed;
+  height: 50px;
+  bottom: -200px;
+  background-color: $white;
+  width: 100%;
+
+  button {
+    height: 27px;
+    width: 27px;
+    outline: none;
+    background-color: transparent;
+    border: 0;
+    background-image: url('../assets/sprite-controls.png');
+    background-position: 0 -50px;
+
+    &:hover {
+      background-position-y: 2px;
+    }
+  }
+
+  .controls {
+    margin-top: 10px;
+    position: relative;
+    transition: top 0.5s;
+    top: 0;
+
+    &.controls-show {
+      transition: top 2s;
+      top: -200px;
+
+      button {
+        background-position-y: 27px;
+
+        &:hover {
+          background-position-y: 78px;
+        }
+      }
+
+    }
+
+    .play {
+      background-position-x: 191px;
+
+      &.playing {
+        background-position-x: 131px;
+      }
+    }
+
+    .prev {
+      background-position-x: 95px;
+    }
+
+    .next {
+      background-position-x: 60px;
+    }
+
+    li {
+      display: inline-block;
+    }
+  }
+
+  .copy {
+    padding: 15px 0 0 0;
+    font-size: 12px;
+  }
+}
+
+//BRING CONTROLS BACK ON FULLSCREEN MODE
+
+.backcontrols {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+
+//MENU
+
+.menu {
+  top: 92px;
+  position: absolute;
+  width: 100%;
+  height: 0;
+  transition: height 1s;
+  overflow: hidden;
+  background-color: $translucent-white;
+
+  ul {
+
+    padding: 35px 0 0 0;
+    transition: margin-top 1s;
+    margin-top: -150px;
+
+    &.items-menu-show {
+      transition: margin-top 2s;
+      margin-top: 0;
+    }
+  }
+
+  li a {
+    padding: 3px 0;
+    color: $black;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $gray;
+    }
+  }
+}
+
+//MENU HOVER
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 120px;
+  min-width: 120px;
+  width: auto;
+  height: 158px;
+  background-color: $dark-brown;
+
+  ul {
+    padding: 50px 20px;
+  }
+}
+
+//FOTOS EN MIN-WIDTH
+
+.fotos {
+  width: 100%;
+  display: none;
+
+  img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: '800px') {
+  header {
+    .menu {
+      display: none;
+    }
+
+    .sociales {
+      margin-top: 35px;
+    }
+
+    .logo {
+      margin-top: 0;
+    }
+
+    nav button {
+      display: block;
+    }
+  }
+
+  nav > ul {
+    display: none;
+  }
+}
+
+@media screen and (max-width: '480px') {
+  .copyright .controls {
+    display: none;
+  }
+
+  header .sociales {
+    display: none;
+  }
+}
+
+.bot-menu-show {
+  transition: bottom 1s;
+  bottom: 0;
+}
+
+.bot-menu-hide {
+  transition: bottom 1s;
+  bottom: -200px;
+}
+
+.top-menu-show {
+  transition: margin-top 1s;
+  margin-top: 0;
+}
+
+.top-menu-hide {
+  transition: margin-top 1s;
+  margin-top: -400px;
+}
+
+.toggle-menu-show {
+  transition: height 1s;
+  height: 200px;
+}
+
+.display {
+  display: block;
+}
+
+.not-display {
+  display: none;
 }
