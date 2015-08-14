@@ -3,8 +3,8 @@
 
 //Opening animations
 function openBars() {
-  $('.copyright').removeClass('bot-menu-hide').addClass("bot-menu-show");
-  $('header').removeClass('top-menu-hide').addClass("top-menu-show");
+  $('.copyright').removeClass('bot-menu-hide').addClass('bot-menu-show');
+  $('header').removeClass('top-menu-hide').addClass('top-menu-show');
 }
 
 //Slideshow
