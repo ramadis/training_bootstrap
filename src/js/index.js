@@ -114,18 +114,18 @@ $(document).ready(startUp());
 //Small width behavior
 $(window).resize(function() {
 	if ($(window).width() < 480) {
-	  $('.fotos').addClass('display');
+		$('.fotos').addClass('display');
 	} else {
-	  $('.fotos').removeClass('display');
+		$('.fotos').removeClass('display');
 	}
 });
 
 //Small width behavior
 $(window).resize(function() {
 	if ($(window).width() > 800) {
-	  $('.menu').addClass('not-display');
-	  $('.menu').removeClass('toggle-menu-show');
-	  $('.menu ul').removeClass('items-menu-show');
+		$('.menu').addClass('not-display');
+		$('.menu').removeClass('toggle-menu-show');
+		$('.menu ul').removeClass('items-menu-show');
 	} else {
 		$('.menu').removeClass('not-display');
 	}

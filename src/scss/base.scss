@@ -58,9 +58,6 @@ header {
       background-size: contain;
       background-repeat: no-repeat;
       display: none;
-      @media screen and (max-width: '800px') {
-        display: block;
-      }
     }
 
     &.col-sm-3 ul li {
@@ -256,16 +253,22 @@ header {
 }
 
 @media screen and (max-width: '800px') {
-  header .menu {
-    display: none;
-  }
+  header {
+    .menu {
+      display: none;
+    }
 
-  header .sociales {
-    margin-top: 35px;
-  }
+    .sociales {
+      margin-top: 35px;
+    }
 
-  header .logo {
-    margin-top: 0;
+    .logo {
+      margin-top: 0;
+    }
+
+    nav button {
+      display: block;
+    }
   }
 
   nav > ul {
