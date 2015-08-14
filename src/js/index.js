@@ -79,7 +79,7 @@ $('.next').click(next);
 
 $('.fullsc').click(fullscreen);
 
-//Toggle button
+//Toggle button behaviour
 $('nav button').click(function() {
 	if (!$('.menu').hasClass('toggle-menu-show')) {
 		$('.menu').addClass('toggle-menu-show');
