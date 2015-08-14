@@ -330,9 +330,8 @@ header {
 }
 
 .header-img {
-  position: absolute;
   top: 0;
-  z-index: 1;
+  position: absolute;
 }
 
 .inverse {
@@ -349,6 +348,10 @@ header {
 
   .submenu a{
     color: $black;
+
+    &:hover {
+      color: $light-brown;
+    }
   }
 }
 
@@ -357,8 +360,8 @@ article {
   z-index: 200;
   width: 100%;
   top: 300px;
-  padding: 70px 300px;
-  height:900px;
+  max-padding: 70px 300px;
+  min-padding: 70px 10px;
   background-color: $dark-brown;
 
   h1 {
@@ -387,13 +390,16 @@ hr {
 }
 
 .about-copyright {
-  position: absolute;
-  top: 1200px;
+  position:relative;
+  top: 800px;
 
-  >  * {
-    display: none;
+  .row {
+    margin: 0;
   }
 
+  .controls {
+    display: none;
+  }
   .copy {
     display: block;
     width: 100%;

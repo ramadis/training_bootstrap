@@ -106,11 +106,15 @@ $('.submenu').mouseleave(function() {
 
 //Opening effects
 function startUp() {
-  slider();
+  //slider();
   openBars();
+  $("header").addClass("inverse");
+  $("img").addClass("header-img");
+  $(".copyright").addClass("about-copyright");
+  $
 }
 
-$(document).ready(startUp);
+$(document).ready(startUp());
 
 //Small width behavior
 $(window).resize(function() {
