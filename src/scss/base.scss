@@ -11,15 +11,13 @@ body {
   transition: background-image 0.5s ease;
 }
 
-
 li {
   list-style-type: none;
 }
 
-
 header {
   overflow: hidden;
-  background-color: $background;
+  background-color: $white;
   margin-top: -400px;
   transition: margin-top 1s;
 
@@ -34,11 +32,11 @@ header {
   }
 
   a {
-    color: $text-color;
+    color: $black;
     transition: color 0.2s ease;
 
     &:hover {
-      color: $text-hover;
+      color: $light-brown;
     }
   }
 
@@ -50,7 +48,7 @@ header {
     text-align: left;
 
     button {
-      background-color: $transparent;
+      background-color: transparent;
       border: 0;
       width: 15px;
       outline: none;
@@ -90,7 +88,7 @@ header {
     &:hover,
     .sociales > *:hover {
       cursor: pointer;
-      color: $logo-hover;
+      color: $gray;
     }
   }
 
@@ -105,7 +103,7 @@ header {
       cursor: pointer;
 
       &:hover {
-        color: $logo-hover;
+        color: $gray;
       }
     }
 
@@ -122,20 +120,17 @@ header {
   position: fixed;
   height: 50px;
   bottom: -200px;
-  background-color: $background;
+  background-color: $white;
   width: 100%;
 
   button {
     height: 27px;
     width: 27px;
     outline: none;
-    //background-color: $transparent;
-    //border: 1px solid $brown;
-    background-color: $transparent;
+    background-color: transparent;
     border: 0;
     background-image: url('../assets/sprite-controls.png');
     background-position: 0 -50px;
-    //border-radius: 100%;
 
     &:hover {
       background-position-y: 2px;
@@ -207,7 +202,7 @@ header {
   height: 0;
   transition: height 1s;
   overflow: hidden;
-  background-color: $toggle-menu-background;
+  background-color: $translucent-white;
 
   ul {
 
@@ -223,11 +218,11 @@ header {
 
   li a {
     padding: 3px 0;
-    color: $text-color;
+    color: $black;
     transition: color 0.3s ease;
 
     &:hover {
-      color: $logo-hover;
+      color: $gray;
     }
   }
 }
@@ -242,7 +237,7 @@ header {
   min-width: 120px;
   width: auto;
   height: 158px;
-  background-color: $selected;
+  background-color: $dark-brown;
 
   ul {
     padding: 50px 20px;
