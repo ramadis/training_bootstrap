@@ -330,8 +330,8 @@ header {
 }
 
 .opacity-show {
-  transition: opacity 1s, margin-top 1s;
-  margin-top: 0;
+  transition: opacity 1s, transform 1s;
+  transform: translateY(0);
   opacity: 1;
 }
 
@@ -381,9 +381,9 @@ article {
     width: 300px;
     margin: 0 auto;
     border-bottom: 8px solid $black;
-    transition: opacity 1s, margin-top 1s;
+    transition: opacity 1s, transform 1s;
     opacity: 0;
-    margin-top: 100px;
+    transform: translateY(100px);
   }
 
   p {
@@ -395,7 +395,8 @@ article {
     width: 50%;
     min-width: 400px;
     max-width: 1000px;
-    transition: opacity 1s;
+    transition: opacity 1s, transform 1s;
+    transform: translateY(100px);
     opacity: 0;
     text-align: left;
   }
@@ -438,7 +439,7 @@ hr {
   opacity: 0;
 
   &.visible {
-    transition: opacity 1s;
+    transition: opacity 0.5s;
     visibility: visible;
     opacity: 1;
   }
