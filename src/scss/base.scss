@@ -356,6 +356,10 @@ header {
     &:hover {
       color: $gray;
     }
+
+    &:focus {
+      color: $gray;
+    }
   }
 
   .submenu a {
