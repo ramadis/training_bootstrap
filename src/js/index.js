@@ -1,4 +1,5 @@
 /*global $ */
+/*jshint -W097 */
 'use strict';
 
 //Opening animations
@@ -131,16 +132,17 @@ $(window).resize(function() {
   }
 });
 
-/********************************************************/
-/**********************ABOUT PAGE ***********************/
-/********************************************************/
-
+//About page load
 $('.about').click(function() {
   $('.loader').addClass('visible');
   $('header').removeClass('top-menu-show');
   $('header').removeClass('bot-menu-show');
   $('.mainContent > *').remove();
   $('.mainContent').load('_about.html');
+
+  if (carrousel) {
+    window.clearInterval(carrousel);
+  }
 
   setTimeout(function() {
     $('.loader').addClass('invisible');
