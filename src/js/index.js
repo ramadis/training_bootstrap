@@ -144,7 +144,11 @@ $('.about').click(function() {
 
     setTimeout(function() {
       $('.loader').addClass('invisible');
+      window.clearInterval(carrousel);
       $('.copyright').addClass('about-copyright');
+      $('body').removeAttr('style');
+      $('body').addClass('no-bg');
+      $('.header-img').addClass('opacity-show');
       $('article > *').addClass('opacity-show');
       $('header').addClass('inverse').addClass('about-header');
       $('img').addClass('header-img');
@@ -152,4 +156,8 @@ $('.about').click(function() {
       $('header').addClass('top-menu-show');
     }, 2000);
   }, 400);
+});
+
+$('.home').click(function() {
+  location.reload();
 });
